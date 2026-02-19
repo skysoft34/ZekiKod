@@ -327,10 +327,6 @@ export class OpencodeProvider extends CliProvider {
     // Add JSON output format for JSONL parsing (not 'stream-json')
     args.push('--format', 'json');
 
-    // Continue last session to avoid "Session not found" error
-    // This ensures we either continue an existing session or start fresh
-    args.push('--continue');
-
     // Handle model selection
     // Strip 'opencode-' prefix if present, OpenCode uses format like 'anthropic/claude-sonnet-4-5'
     if (options.model) {
